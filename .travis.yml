@@ -1,0 +1,18 @@
+language: generic 
+sudo: required
+services:
+  - docker
+
+before_install:
+ - docker build -t barisege/fibonacci-calculator-client-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true barisege/fibonacci-calculator-client-test npm-test
+
+after_success:
+  - docker build -t barisege/fibonacci-calcucator-client ./client
+  - docker build -t barisege/fibonacci-calcucator-nginx ./nginx
+  - docker build -t barisege/fibonacci-calcucator-server ./server
+  - docker build -t barisege/fibonacci-calcucator-worker ./worker
+
+  
