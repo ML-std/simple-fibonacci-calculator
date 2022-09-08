@@ -1,11 +1,11 @@
 version: "3"
 services:
   client:
-    image: "barisege/fibonnaci-calculator-client"
+    image: "barisege/fibonacci-calculator-client"
     mem_limit: 128m
     hostname: client
   server:
-    image: "barisege/fibonnaci-calculator-server"
+    image: "barisege/fibonacci-calculator-server"
     mem_limit: 128m
     hostname: api
     environment:
@@ -17,7 +17,7 @@ services:
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   worker:
-    image: "barisege/fibonnaci-calculator-worker"
+    image: "barisege/fibonacci-calculator-worker"
     mem_limit: 128m
     hostname: worker
     environment:
@@ -25,7 +25,7 @@ services:
       - REDIS_PORT=$REDIS_PORT
   nginx:
     restart: always
-    image: "barisege/fibonnaci-calculator-nginx"
+    image: "barisege/fibonacci-calculator-nginx"
     mem_limit: 128m
     hostname: nginx
     ports:
