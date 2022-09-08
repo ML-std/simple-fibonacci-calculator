@@ -10,16 +10,16 @@ script:
   - docker run -e CI=true barisege/fibonacci-calculator-client-test npm test
 
 after_success:
-  - docker build -t barisege/fibonacci-calcucator-client ./client
-  - docker build -t barisege/fibonacci-calcucator-nginx ./nginx
-  - docker build -t barisege/fibonacci-calcucator-server ./server
+  - docker build -t barisege/fibonacci-calculator-client ./client
+  - docker build -t barisege/fibonacci-calculator-nginx ./nginx
+  - docker build -t barisege/fibonacci-calculator-server ./server
   - docker build -t barisege/fibonacci-calcucator-worker ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push barisege/fibonacci-calcucator-client
-  - docker push barisege/fibonacci-calcucator-nginx
-  - docker push barisege/fibonacci-calcucator-server
-  - docker push barisege/fibonacci-calcucator-worker
+  - docker push barisege/fibonacci-calculator-client
+  - docker push barisege/fibonacci-calculator-nginx
+  - docker push barisege/fibonacci-calculator-server
+  - docker push barisege/fibonacci-calculator-worker
 
 deploy:
   provider: elasticbeanstalk
