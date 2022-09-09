@@ -34,7 +34,7 @@ class FibonnaciPage extends Component {
 
     }
     renderSeenIndexes() {
-        return this.state.seenIndexes.map(({ number }) => number).join(', ');
+        //return this.state.seenIndexes.map(({ number }) => number).join(', ');
     }
     renderValues() {
         const entries = [];
@@ -68,7 +68,7 @@ class FibonnaciPage extends Component {
                 <h3>
                     Indexes That Are Seen Previously:
                 </h3>
-                {this.renderSeenIndexes()}
+                
 
                 <h3>
                     Calculated Values:
