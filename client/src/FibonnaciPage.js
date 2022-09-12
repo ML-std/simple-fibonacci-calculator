@@ -69,7 +69,7 @@ class FibonnaciPage extends Component {
                     Indexes That Are Seen Previously:
                 </h3>
                 
-
+                {this.renderSeenIndexes()}
                 <h3>
                     Calculated Values:
                 </h3>
