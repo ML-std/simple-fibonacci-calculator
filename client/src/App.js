@@ -17,7 +17,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-           Basic Fibonnaci Calculator with K8S!
+           Basic Fibonnaci Calculator with K8S! VERSION # 2
           </a>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Working On Page....</Link>
